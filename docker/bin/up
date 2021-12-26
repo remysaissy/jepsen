@@ -83,7 +83,7 @@ do
             ;;
     esac
 done
-set -- "${POSITIONAL[@]}" # restore positional parameters
+set -- "${POSITIONAL[@]+"${POSITIONAL[@]}"}" # restore positional parameters
 
 if [ "${HELP}" -eq 1 ]; then
     echo "Usage: $0 [OPTION]"
